@@ -51,6 +51,7 @@ const MovieDetails = () => {
 
         const showtimeList = generateShowtimes([movieData], theatersData);
         setShowtimes(showtimeList);
+        sessionStorage.setItem('showtimes', JSON.stringify(showtimeList));
       } catch (err) {
         console.error('Error fetching data:', err);
       } finally {
@@ -59,7 +60,7 @@ const MovieDetails = () => {
     };
 
     fetchData();
-  }, [id,nextDays]);
+  }, [id]);
 
   
 

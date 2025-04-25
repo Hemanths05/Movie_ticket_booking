@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const {getTheaters} = require('../controllers/theaterController');
+const {getTheaters,getTheatersById} = require('../controllers/theaterController');
 
+router.get('/:id',getTheatersById);
 router.get('/', getTheaters);
-
 module.exports = router;

@@ -1,18 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-
+import PaymentPage from './pages/PaymentPage';
 import AuthProvider from './context/AuthProvider';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
-
+import ProtectedRoute from './components/auth/ProtectedRoute'
 import Home from './pages/Home';
 import Login from './pages/auth/Login';
 import Signup from './pages/auth/Register';
 import MovieDetail from './pages/MovieDetail';
+import BookingPage from './pages/BookingPage';
 // import SeatSelection from './pages/SeatSelection';
-// import Payment from './pages/Payment';
-// import Bookings from './pages/Bookings';
 // import Admin from './pages/Admin';
 
 const App = () => {
@@ -27,9 +26,9 @@ const App = () => {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/movies/:id" element={<MovieDetail />} />
+              <Route path="/booking/:id/:showtime" element={<ProtectedRoute><BookingPage /></ProtectedRoute>} />              
+              <Route path="/payment/:id" element={<PaymentPage />} />
               {/*
-              <Route path="/booking/:id" element={<SeatSelection />} />
-              <Route path="/payment/:id" element={<Payment />} />
               <Route path="/bookings" element={<Bookings />} />
               <Route path="/admin" element={<Admin />} /> */}
             </Routes>
