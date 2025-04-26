@@ -26,7 +26,7 @@ const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await fetch('https://movie-ticket-booking-0igc.onrender.com/api/auth/login', {
+      const response = await fetch('http://cineticketmovieticketbooking.s3-website.eu-north-1.amazonaws.com/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ const AuthProvider = ({ children }) => {
 
   const register = async (name, email, password) => {
     try {
-      const res = await fetch('https://movie-ticket-booking-0igc.onrender.com/api/auth/register', {
+      const res = await fetch('http://cineticketmovieticketbooking.s3-website.eu-north-1.amazonaws.com/api/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

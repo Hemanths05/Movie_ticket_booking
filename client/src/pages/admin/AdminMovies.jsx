@@ -14,7 +14,7 @@ const AdminMovies = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const res = await axios.get('https://movie-ticket-booking-0igc.onrender.com/api/admin/movies');
+        const res = await axios.get('http://cineticketmovieticketbooking.s3-website.eu-north-1.amazonaws.com/api/admin/movies');
         setMovies(Array.isArray(res.data) ? res.data : []);
       } catch (error) {
         console.error('Failed to fetch movies', error);
@@ -28,7 +28,7 @@ const AdminMovies = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this movie?')) return;
     try {
-      await axios.delete(`https://movie-ticket-booking-0igc.onrender.com/api/admin/movies/delete/${id}`);
+      await axios.delete(`http://cineticketmovieticketbooking.s3-website.eu-north-1.amazonaws.com/api/admin/movies/delete/${id}`);
       setMovies(movies.filter((movie) => movie._id !== id));
     } catch (error) {
       console.error('Failed to delete movie', error);
@@ -199,7 +199,7 @@ const AdminMovies = () => {
                 };
 
                 try {
-                  const res = await axios.post('https://movie-ticket-booking-0igc.onrender.com/api/admin/movies/add', newMovie);
+                  const res = await axios.post('http://cineticketmovieticketbooking.s3-website.eu-north-1.amazonaws.com/api/admin/movies/add', newMovie);
                   setMovies(prev => [...prev, res.data]);
                   setShowAddModal(false);
                 } catch (error) {
@@ -262,7 +262,7 @@ const AdminMovies = () => {
                 };
 
                 try {
-                  await axios.put(`https://movie-ticket-booking-0igc.onrender.com/api/admin/movies/update/${selectedMovie._id}`, updatedMovie);
+                  await axios.put(`http://cineticketmovieticketbooking.s3-website.eu-north-1.amazonaws.com/api/admin/movies/update/${selectedMovie._id}`, updatedMovie);
                   setMovies(movies.map(m => m._id === selectedMovie._id ? { ...updatedMovie, _id: selectedMovie._id } : m));
                   setShowEditModal(false);
                   setSelectedMovie(null);
