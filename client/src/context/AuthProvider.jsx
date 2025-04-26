@@ -26,7 +26,7 @@ const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await fetch('http://13.50.187.158:5000//api/auth/login', {
+      const response = await fetch('https://movie-ticket-booking-0igc.onrender.com/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ const AuthProvider = ({ children }) => {
 
   const register = async (name, email, password) => {
     try {
-      const res = await fetch('http://13.50.187.158:5000//api/auth/register', {
+      const res = await fetch('https://movie-ticket-booking-0igc.onrender.com/api/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -15,7 +15,7 @@ connectDB();
 const app = express();
 const allowedOrigins = [
     'https://movie-ticket-booking-git-master-hemanth-ss-projects.vercel.app',
-    'http://13.50.187.158:5000/'
+    'https://movie-ticket-booking-0igc.onrender.com'
   ];
   
 app.use(cors({
