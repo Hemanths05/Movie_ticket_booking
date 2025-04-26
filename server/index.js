@@ -13,12 +13,21 @@ const adminRoutes = require('./routes/adminRoutes');
 dotenv.config();
 connectDB();
 
-const app = express();
-app.use(cors({
-    origin: 'https://movie-ticket-booking-git-master-hemanth-ss-projects.vercel.app',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true
+const allowedOrigins = [
+    'https://movie-ticket-booking-git-master-hemanth-ss-projects.vercel.app',
+    'http://cineticketmovieticketbooking.s3-website.eu-north-1.amazonaws.com'
+  ];
+  
+  app.use(cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    }
   }));
+  
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
