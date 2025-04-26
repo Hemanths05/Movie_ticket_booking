@@ -9,7 +9,7 @@ const TheaterPage = () => {
   useEffect(() => {
     const fetchTheaters = async () => {
       try {
-        const response = await axios.get('http://cineticketmovieticketbooking.s3-website.eu-north-1.amazonaws.com/api/theaters');
+        const response = await axios.get('http://13.50.187.158:5000//api/theaters');
         setTheaters(response.data);
         setIsLoading(false);
       } catch (error) {

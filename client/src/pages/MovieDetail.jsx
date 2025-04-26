@@ -35,12 +35,12 @@ const MovieDetails = () => {
         setLoading(true);
         setSelectedDate(nextDays[0].date);
 
-        const movieRes = await fetch(`http://cineticketmovieticketbooking.s3-website.eu-north-1.amazonaws.com/api/movies/${id}`);
+        const movieRes = await fetch(`http://13.50.187.158:5000//api/movies/${id}`);
         const movieData = await movieRes.json();
         if (!movieRes.ok) throw new Error('Movie not found');
         setMovie(movieData);
 
-        const theatersRes = await fetch(`http://cineticketmovieticketbooking.s3-website.eu-north-1.amazonaws.com/api/theaters?city=Bengaluru`);
+        const theatersRes = await fetch(`http://13.50.187.158:5000//api/theaters?city=Bengaluru`);
         const theatersData = await theatersRes.json();
 
         const theatersMap = theatersData.reduce((acc, theater) => {

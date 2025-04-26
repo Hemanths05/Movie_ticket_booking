@@ -12,7 +12,7 @@ const AdminBookings = () => {
   useEffect(() => {
     const fetchBookings = async () => {
       try {
-        const response = await axios.get('http://cineticketmovieticketbooking.s3-website.eu-north-1.amazonaws.com/api/bookings');
+        const response = await axios.get('http://13.50.187.158:5000//api/bookings');
         const formatted = response.data.map((b) => ({
           bid: b.bookingId,
           _id: b._id,
@@ -39,7 +39,7 @@ const AdminBookings = () => {
   const handleCancelBooking = async () => {
     try {
       console.log("Booking id",selectedBookingId);
-      await axios.put(`http://cineticketmovieticketbooking.s3-website.eu-north-1.amazonaws.com/api/bookings/updateStatus/${selectedBookingId}`, {
+      await axios.put(`http://13.50.187.158:5000//api/bookings/updateStatus/${selectedBookingId}`, {
         status: 'cancelled'
       });
   
@@ -57,7 +57,7 @@ const AdminBookings = () => {
   const handleConfirmedBooking = async () => {
     try {
       console.log("Booking id",selectedBookingId);
-      await axios.put(`http://cineticketmovieticketbooking.s3-website.eu-north-1.amazonaws.com/api/bookings/updateStatus/${selectedBookingId}`, {
+      await axios.put(`http://13.50.187.158:5000//api/bookings/updateStatus/${selectedBookingId}`, {
         status: 'completed'
       });
   

@@ -14,7 +14,7 @@ const AdminHome = () => {
   useEffect(() => {
       const fetchDashboardData = async () => {
         try {
-          const res = await fetch('http://cineticketmovieticketbooking.s3-website.eu-north-1.amazonaws.com/api/admin/dashboard');
+          const res = await fetch('http://13.50.187.158:5000//api/admin/dashboard');
           const data = await res.json();
     
           setStats(data.stats);

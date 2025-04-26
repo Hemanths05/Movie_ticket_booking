@@ -20,7 +20,7 @@ const BookingPage = () => {
     const fetchBookingDetails = async () => {
     try{
         setLoading(true);
-        const movieRes = await fetch(`http://cineticketmovieticketbooking.s3-website.eu-north-1.amazonaws.com/api/movies/${movieId}`);
+        const movieRes = await fetch(`http://13.50.187.158:5000//api/movies/${movieId}`);
         const movieData = await movieRes.json();
         if (!movieRes.ok) throw new Error('Movie not found');
         setMovie(movieData);
@@ -43,7 +43,7 @@ const BookingPage = () => {
         }
 
 
-      const theaterRes = await fetch(`http://cineticketmovieticketbooking.s3-website.eu-north-1.amazonaws.com/api/theaters/${selectedShowtime.theaterId}`);
+      const theaterRes = await fetch(`http://13.50.187.158:5000//api/theaters/${selectedShowtime.theaterId}`);
       const theaterData = await theaterRes.json();
       if (!theaterRes.ok) throw new Error('Theater not found');
       setTheater(theaterData);

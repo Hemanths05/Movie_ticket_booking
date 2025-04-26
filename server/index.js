@@ -15,7 +15,7 @@ connectDB();
 const app = express();
 const allowedOrigins = [
     'https://movie-ticket-booking-git-master-hemanth-ss-projects.vercel.app',
-    'http://cineticketmovieticketbooking.s3-website.eu-north-1.amazonaws.com'
+    'http://13.50.187.158:5000/'
   ];
   
 app.use(cors({

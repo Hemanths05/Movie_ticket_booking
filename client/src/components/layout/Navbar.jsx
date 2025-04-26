@@ -26,7 +26,7 @@ const Navbar = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await axios.get('http://cineticketmovieticketbooking.s3-website.eu-north-1.amazonaws.com/api/movies');
+        const response = await axios.get('http://13.50.187.158:5000//api/movies');
         setMovies(response.data);
       } catch (error) {
         console.error('Error fetching movies:', error);

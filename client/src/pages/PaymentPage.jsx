@@ -32,7 +32,7 @@ const CheckoutForm = ({ bookingId, bookingData }) => {
         return;
     }
     try {
-      const res = await fetch('http://cineticketmovieticketbooking.s3-website.eu-north-1.amazonaws.com/api/payment/create-payment-intent', {
+      const res = await fetch('http://13.50.187.158:5000//api/payment/create-payment-intent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount: amountInPaise*100 }) // amount in paise
