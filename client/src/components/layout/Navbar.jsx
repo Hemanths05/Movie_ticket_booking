@@ -4,7 +4,7 @@ import { Menu, X, Film, Search, User, LogOut, ChevronDown } from 'lucide-react';
 import Button from '../common/Button';
 import useAuth from '../../context/useAuth';
 import axios from 'axios';
-import Chatbot from '../chatbot/ChatBox';
+import Chatbot from '../chatbot/Chatbox';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
