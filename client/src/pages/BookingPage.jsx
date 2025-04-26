@@ -20,7 +20,7 @@ const BookingPage = () => {
     const fetchBookingDetails = async () => {
     try{
         setLoading(true);
-        const movieRes = await fetch(`http://localhost:5000/api/movies/${movieId}`);
+        const movieRes = await fetch(`https://movie-ticket-booking-0igc.onrender.com/api/movies/${movieId}`);
         const movieData = await movieRes.json();
         if (!movieRes.ok) throw new Error('Movie not found');
         setMovie(movieData);
@@ -43,7 +43,7 @@ const BookingPage = () => {
         }
 
 
-      const theaterRes = await fetch(`http://localhost:5000/api/theaters/${selectedShowtime.theaterId}`);
+      const theaterRes = await fetch(`https://movie-ticket-booking-0igc.onrender.com/api/theaters/${selectedShowtime.theaterId}`);
       const theaterData = await theaterRes.json();
       if (!theaterRes.ok) throw new Error('Theater not found');
       setTheater(theaterData);

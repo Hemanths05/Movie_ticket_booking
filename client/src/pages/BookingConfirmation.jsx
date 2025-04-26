@@ -39,7 +39,7 @@ const BookingConfirmation = () => {
       
       try {
         
-        await axios.post("http://localhost:5000/api/bookings/create", {
+        await axios.post("https://movie-ticket-booking-0igc.onrender.com/api/bookings/create", {
           bookingId,
           paymentId: bookingId,
           userId: user.id,

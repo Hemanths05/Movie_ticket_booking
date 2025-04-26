@@ -35,12 +35,12 @@ const MovieDetails = () => {
         setLoading(true);
         setSelectedDate(nextDays[0].date);
 
-        const movieRes = await fetch(`http://localhost:5000/api/movies/${id}`);
+        const movieRes = await fetch(`https://movie-ticket-booking-0igc.onrender.com/api/movies/${id}`);
         const movieData = await movieRes.json();
         if (!movieRes.ok) throw new Error('Movie not found');
         setMovie(movieData);
 
-        const theatersRes = await fetch(`http://localhost:5000/api/theaters?city=Bengaluru`);
+        const theatersRes = await fetch(`https://movie-ticket-booking-0igc.onrender.com/api/theaters?city=Bengaluru`);
         const theatersData = await theatersRes.json();
 
         const theatersMap = theatersData.reduce((acc, theater) => {

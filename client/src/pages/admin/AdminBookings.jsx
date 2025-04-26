@@ -12,7 +12,7 @@ const AdminBookings = () => {
   useEffect(() => {
     const fetchBookings = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/bookings');
+        const response = await axios.get('https://movie-ticket-booking-0igc.onrender.com/api/bookings');
         const formatted = response.data.map((b) => ({
           bid: b.bookingId,
           _id: b._id,
@@ -39,7 +39,7 @@ const AdminBookings = () => {
   const handleCancelBooking = async () => {
     try {
       console.log("Booking id",selectedBookingId);
-      await axios.put(`http://localhost:5000/api/bookings/updateStatus/${selectedBookingId}`, {
+      await axios.put(`https://movie-ticket-booking-0igc.onrender.com/api/bookings/updateStatus/${selectedBookingId}`, {
         status: 'cancelled'
       });
   
@@ -57,7 +57,7 @@ const AdminBookings = () => {
   const handleConfirmedBooking = async () => {
     try {
       console.log("Booking id",selectedBookingId);
-      await axios.put(`http://localhost:5000/api/bookings/updateStatus/${selectedBookingId}`, {
+      await axios.put(`https://movie-ticket-booking-0igc.onrender.com/api/bookings/updateStatus/${selectedBookingId}`, {
         status: 'completed'
       });
   
