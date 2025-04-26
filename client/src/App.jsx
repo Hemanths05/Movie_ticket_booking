@@ -11,7 +11,11 @@ import Login from './pages/auth/Login';
 import Signup from './pages/auth/Register';
 import MovieDetail from './pages/MovieDetail';
 import BookingPage from './pages/BookingPage';
-// import SeatSelection from './pages/SeatSelection';
+import BookingConfirmation from './pages/BookingConfirmation';
+import AdminRoute from './components/auth/AdminRoute';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import MoviesPage from './pages/MoviesPage';
+import TheaterPage from './pages/TheaterPage';
 // import Admin from './pages/Admin';
 
 const App = () => {
@@ -25,9 +29,13 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
+              <Route path="/movies" element={<MoviesPage />} />
+              <Route path="/theaters" element={<TheaterPage />} />
               <Route path="/movies/:id" element={<MovieDetail />} />
               <Route path="/booking/:id/:showtime" element={<ProtectedRoute><BookingPage /></ProtectedRoute>} />              
-              <Route path="/payment/:id" element={<PaymentPage />} />
+              <Route path="/payment/:bookingId" element={<PaymentPage />} />
+              <Route path="/confirmation/:bookingId" element={<ProtectedRoute><BookingConfirmation /></ProtectedRoute>} />
+              <Route path="/admin/*" element={<AdminRoute><AdminDashboard /></AdminRoute>} />
               {/*
               <Route path="/bookings" element={<Bookings />} />
               <Route path="/admin" element={<Admin />} /> */}

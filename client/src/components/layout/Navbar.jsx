@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X, Film, Search, User, LogOut, ChevronDown } from 'lucide-react';
 import Button from '../common/Button';
 import useAuth from '../../context/useAuth';
+import axios from 'axios';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showUserDropdown, setShowUserDropdown] = useState(false);
   const navigate = useNavigate();
   const { isAuthenticated, user, logout } = useAuth();
-
+  const [searchQuery, setSearchQuery] = useState('');
+  const [movies, setMovies] = useState([]);
+  const [filteredMovies, setFilteredMovies] = useState([]);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleUserDropdown = () => setShowUserDropdown(!showUserDropdown);
 
@@ -18,6 +21,36 @@ const Navbar = () => {
     setIsMenuOpen(false);
     setShowUserDropdown(false);
     navigate('/');
+  };
+
+  useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/movies');
+        setMovies(response.data);
+      } catch (error) {
+        console.error('Error fetching movies:', error);
+      }
+    };
+
+    fetchMovies();
+  }, []);
+
+  useEffect(() => {
+    if (searchQuery.trim() !== '') {
+      const results = movies.filter(movie =>
+        movie.title.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setFilteredMovies(results);
+    } else {
+      setFilteredMovies([]);
+    }
+  }, [searchQuery, movies]);
+
+  const handleMovieClick = (movieId) => {
+    setSearchQuery('');
+    setFilteredMovies([]);
+    navigate(`/movies/${movieId}`);
   };
 
   return (
@@ -39,7 +72,7 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center">
-            <div className="relative mx-4">
+            {/* <div className="relative mx-4">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <Search className="h-5 w-5 text-gray-400" />
               </div>
@@ -48,7 +81,36 @@ const Navbar = () => {
                 placeholder="Search movies..."
                 className="bg-gray-800 pl-10 pr-4 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:bg-gray-700"
               />
+            </div> */}
+            <div className="hidden md:flex items-center">
+        <div className="relative mx-4">
+          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <Search className="h-5 w-5 text-gray-400" />
+          </div>
+          <input
+            type="text"
+            placeholder="Search movies..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="bg-gray-800 pl-10 pr-4 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:bg-gray-700"
+          />
+          
+          {/* Search Results Dropdown */}
+          {filteredMovies.length > 0 && (
+            <div className="absolute w-full bg-white text-black mt-1 rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto">
+              {filteredMovies.map((movie) => (
+                <div
+                  key={movie._id}
+                  className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                  onClick={() => handleMovieClick(movie._id)}
+                >
+                  {movie.title}
+                </div>
+              ))}
             </div>
+          )}
+        </div>
+        </div>
 
             {isAuthenticated ? (
               <div className="relative">

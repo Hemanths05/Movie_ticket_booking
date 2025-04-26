@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const  Booking = require('../models/Booking')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -70,4 +71,67 @@ const loginUser = async (req, res) => {
   }
 };
 
-module.exports = {registerUser, loginUser};
+const getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find();
+
+    const usersWithBookings = await Promise.all(
+      users.map(async (user) => {
+        const bookingCount = await Booking.countDocuments({ userId: user._id });
+        return {
+          _id: user._id,
+          name: user.name,
+          email: user.email,
+          createdAt: user.createdAt,
+          updatedAt: user.updatedAt,
+          bookings: bookingCount, 
+        };
+      })
+    );
+
+    res.json(usersWithBookings);
+  } catch (error) {
+    console.error('Error fetching users:', error);
+    res.status(500).json({ message: 'Server Error' });
+  }
+};
+
+const editUser = async (req, res) => {
+  try {
+    const { email } = req.params;
+    const { name, newEmail } = req.body; 
+
+    const updatedUser = await User.findOneAndUpdate(
+      { email: email },
+      { name: name, email: newEmail || email }, 
+      { new: true } 
+    );
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    res.json(updatedUser);
+  } catch (error) {
+    console.error('Error updating user:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+const deleteUser = async (req, res) => {
+  try {
+    const { email } = req.params;
+    const deletedUser = await User.findOneAndDelete({ email: email });
+
+    if (!deletedUser) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    res.json({ message: 'User deleted successfully' });
+  } catch (error) {
+    console.error('Error deleting user:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+module.exports = {registerUser, loginUser, getAllUsers, deleteUser, editUser};

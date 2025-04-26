@@ -8,9 +8,9 @@ import App from './App.jsx';
 const stripePromise = loadStripe('pk_test_51RBJYsFwJt3goCLz4tzyqGUKRYt3hfaXjFWuSPKhbZ014goqCnqyFlSKJvPnpynQX15gTEJUiGLLoNEEWc2kvRHU00W5Zfee1l');
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <Elements stripe={stripePromise}>
+  <Elements stripe={stripePromise}>
+    <StrictMode>
       <App />
-    </Elements>
-  </StrictMode>
+    </StrictMode>
+  </Elements>
 );
