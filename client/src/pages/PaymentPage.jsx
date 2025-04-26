@@ -32,7 +32,7 @@ const CheckoutForm = ({ bookingId, bookingData }) => {
         return;
     }
     try {
-      const res = await fetch('https://movie-ticket-booking-0igc.onrender.com/api/payment/create-payment-intent', {
+      const res = await fetch('https://hemanthmovies.duckdns.org/api/payment/create-payment-intent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount: amountInPaise*100 }) // amount in paise

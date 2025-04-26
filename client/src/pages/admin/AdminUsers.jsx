@@ -25,7 +25,7 @@ const AdminUsers = () => {
   
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('https://movie-ticket-booking-0igc.onrender.com/api/auth');
+      const response = await axios.get('https://hemanthmovies.duckdns.org/api/auth');
       const fetchedUsers = response.data.map((user, index) => ({
         id: `USR${(index + 1).toString().padStart(5, '0')}`,
         name: user.name,
@@ -47,7 +47,7 @@ const AdminUsers = () => {
   const handleDelete = async (userEmail) => {
     if (window.confirm('Are you sure you want to delete this user?')) {
       try {
-        await axios.delete(`https://movie-ticket-booking-0igc.onrender.com/api/auth/${userEmail}`);
+        await axios.delete(`https://hemanthmovies.duckdns.org/api/auth/${userEmail}`);
         fetchUsers(); 
       } catch (error) {
         console.error('Error deleting user:', error);
@@ -161,7 +161,7 @@ const AdminUsers = () => {
               <button
                 onClick={async () => {
                   try {
-                    await axios.post('https://movie-ticket-booking-0igc.onrender.com/api/auth/register', newUser);
+                    await axios.post('https://hemanthmovies.duckdns.org/api/auth/register', newUser);
                     setShowModal(false);
                     setNewUser({ name: '', email: '', password: '' });
                     fetchUsers(); 
@@ -209,7 +209,7 @@ const AdminUsers = () => {
               <button
                 onClick={async () => {
                   try {
-                    await axios.put(`https://movie-ticket-booking-0igc.onrender.com/api/auth/edit/${editUser.email}`, editUser);
+                    await axios.put(`https://hemanthmovies.duckdns.org/api/auth/edit/${editUser.email}`, editUser);
                     setEditModalOpen(false);
                     fetchUsers();
                   } catch (error) {
