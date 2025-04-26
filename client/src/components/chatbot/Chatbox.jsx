@@ -108,7 +108,6 @@ const Chatbot = () => {
     setIsTyping(true);
 
     try {
-      // Simulate network delay for typing indicator
       await new Promise((resolve) => setTimeout(resolve, 1000));
       
       const response = await fetch("https://movie-ticket-booking-0igc.onrender.com/api/chatbot", {
