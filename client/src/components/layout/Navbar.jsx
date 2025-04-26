@@ -4,6 +4,7 @@ import { Menu, X, Film, Search, User, LogOut, ChevronDown } from 'lucide-react';
 import Button from '../common/Button';
 import useAuth from '../../context/useAuth';
 import axios from 'axios';
+import Chatbot from '../chatbot/ChatBox';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,6 +55,7 @@ const Navbar = () => {
   };
 
   return (
+    <>
     <nav className="bg-gray-900 text-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
@@ -215,7 +217,11 @@ const Navbar = () => {
         </div>
       )}
     </nav>
+    <Chatbot/>
+    </>
   );
 };
 
 export default Navbar;
+
+

@@ -9,6 +9,7 @@ const showTimeRoutes = require('./routes/showtimeRoutes.js');
 const paymentRoutes = require('./routes/payment');
 const bookingRoutes = require('./routes/bookings.js');
 const adminRoutes = require('./routes/adminRoutes');
+const chatbotRoute = require('./routes/chatbot.js');
 
 dotenv.config();
 connectDB();
@@ -16,6 +17,7 @@ connectDB();
 const app = express();
 app.use(cors());
 app.use(express.json());
+
 
 app.use('/api/auth', authRoutes);
 app.use('/api/movies', movieRoutes);
@@ -25,6 +27,7 @@ app.use('/api/showtimes', showTimeRoutes);
 app.use('/api/payment', paymentRoutes);
 app.use("/api/bookings", bookingRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/chatbot', chatbotRoute); 
 
 
 
