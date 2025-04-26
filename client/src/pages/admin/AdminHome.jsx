@@ -14,7 +14,7 @@ const AdminHome = () => {
   useEffect(() => {
       const fetchDashboardData = async () => {
         try {
-          const res = await fetch('https://hemanthmovies.duckdns.org/api/admin/dashboard');
+          const res = await fetch('https://movie-ticket-booking-0igc.onrender.com/api/admin/dashboard');
           const data = await res.json();
     
           setStats(data.stats);

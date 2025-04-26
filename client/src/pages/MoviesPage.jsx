@@ -11,7 +11,7 @@ const MoviesPage = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await axios.get('https://hemanthmovies.duckdns.org/api/movies');
+        const response = await axios.get('https://movie-ticket-booking-0igc.onrender.com/api/movies');
         const movieData = response.data;
         setMovies(movieData);
         setIsLoading(false);
