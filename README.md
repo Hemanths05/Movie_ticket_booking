@@ -166,6 +166,8 @@ server
 - Seamless integration with Stripe for secure payments
 - Accepts major debit and credit cards
 - Sends confirmation upon successful transaction
+  
+---
 
 ## 🤖 AI Tools Utilized
 - **Gemini**: Integrated for the AI chatbot to answer user queries, enhancing the support system within the application.
