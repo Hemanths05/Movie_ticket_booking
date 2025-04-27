@@ -49,8 +49,8 @@ const Home = () => {
               <Sparkles className="h-5 w-5 text-amber-500 mr-2" />
               Now Showing
             </h2>
-            <a href="/movies" className="text-red-600 hover:text-red-700 font-medium">View All</a>
-          </div>
+            <Link to="/movies" className="text-red-600 hover:text-red-700 font-medium">View All</Link>
+            </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {movies.slice(0, 4).map((movie) => (
               <MovieCard key={movie._id} movie={movie} />
