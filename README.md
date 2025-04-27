@@ -127,11 +127,9 @@ server
 │
 ├── .env
 ├── .gitignore
-├── data.json
 ├── index.js
 ├── package.json
 ├── package-lock.json
-└── seed.js
 ```
 
 ---
