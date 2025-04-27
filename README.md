@@ -37,7 +37,7 @@ This application allows users to browse movies, select showtimes, book seats, in
 1. Clone the repository:
    ```bash
    git clone https://github.com/Hemanths05/Movie_ticket_booking
-   cd movie-ticket-booking
+   cd Movie_ticket_booking
    ```
 
 2. Install dependencies for both client and server:
