@@ -5,6 +5,14 @@ This application allows users to browse movies, select showtimes, book seats, in
 
 ---
 
+# 🎨 Figma Design
+- Check out the Figma Design for the CineTicket platform:
+- **Figma Design Link**: https://www.figma.com/design/oBOTBwhVQZZ7dnaXyu691Z/Untitled?node-id=3-2&t=H7crLS7ShnGINfJD-1
+- **User Desgin prototype**: https://www.figma.com/proto/oBOTBwhVQZZ7dnaXyu691Z/Untitled?node-id=3-2&t=H7crLS7ShnGINfJD-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A2
+- **Admin Desgin prototype**: https://www.figma.com/proto/oBOTBwhVQZZ7dnaXyu691Z/Untitled?node-id=15-1827&t=w482Wwv8gwFyGvyd-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A2
+
+
+
 ## 🌐 Live Demo
 
 - You can try out the live version of CineTicket below:
