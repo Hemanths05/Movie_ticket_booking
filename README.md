@@ -15,6 +15,14 @@ This application allows users to browse movies, select showtimes, book seats, in
 
 ---
 
+## 🎥 Video Explanation
+
+- **Watch a full walkthrough of CineTicket**:  
+  [Video Walkthrough](https://drive.google.com/file/d/1cPv7LF8IAOlZp-Y4HB7tjLYokwepqe72/view?usp=drive_link)
+
+  ---
+
+
 ## 🌐 Live Demo
 
 - You can try out the live version of CineTicket below:
