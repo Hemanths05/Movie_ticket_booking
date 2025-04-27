@@ -3,6 +3,7 @@ import { Sparkles } from 'lucide-react';
 import Hero from '../components/home/Hero';
 import MovieCard from '../components/movies/MovieCard';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import MovieCarousel from '../components/movies/MovieCarousel';
 
 const Home = () => {
