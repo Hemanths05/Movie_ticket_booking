@@ -5,6 +5,13 @@ This application allows users to browse movies, select showtimes, book seats, in
 
 ---
 
+## 🌐 Live Demo
+
+You can try out the live version of CineTicket below:
+- **CineTicket**: (https://movie-ticket-booking-zeta-swart.vercel.app/)
+Feel free to explore the platform, browse movies, and make bookings!
+
+---
 ## 🚀 Features
 
 - **User Authentication**: Secure login and registration system
@@ -171,5 +178,31 @@ server
 - **Gemini**: Integrated for the AI chatbot to answer user queries, enhancing the support system within the application.
 - **ChatGPT**: Used during development to fix errors, debug, and optimize code, ensuring smooth functionality of the application.
 - **Claude**: Utilized for creating the basic UI structure and assisting with various design and development tasks to improve the user experience.
+
+---
+
+## 🚀 Deployment Steps
+
+### Frontend Deployment (Vercel)
+1. Push the `client` folder to your GitHub repository.
+2. Go to [Vercel](https://vercel.com/) and sign in or create an account.
+3. Create a new project and link your GitHub repository.
+4. Select the `client` folder as the project directory.
+5. Vercel will automatically deploy your frontend, and you will get a live URL for your application.
+
+### Backend Deployment (Render)
+1. Push the `server` folder to your GitHub repository.
+2. Go to [Render](https://render.com/) and sign in or create an account.
+3. Create a new web service and link your GitHub repository.
+4. Choose the `server` folder as the directory for the backend.
+5. Set up environment variables on Render (same as in `.env` file).
+6. Render will deploy your backend, and you will get a live URL for your backend API.
+
+### Update API Calls
+After deploying the backend on Render, you will need to update the API calls in the frontend to point to the deployed backend URL instead of the local one. 
+1. Locate the API endpoint references in your frontend code (e.g., `axios` or `fetch` calls).
+2. Replace the local API URL (`http://localhost:5000`) with the deployed backend URL from Render (e.g., `https://your-backend-url.onrender.com`).
+
+Once both frontend and backend are deployed and the API calls are updated, you can access your application by visiting the live frontend URL and interacting with the deployed backend API.
 
 ---
