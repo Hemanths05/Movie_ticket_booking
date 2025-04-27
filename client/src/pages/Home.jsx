@@ -60,8 +60,8 @@ const Home = () => {
         <div className="mb-8">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold text-gray-900">Coming Soon</h2>
-            <a href="/movies" className="text-red-600 hover:text-red-700 font-medium">View All</a>
-          </div>
+             <Link to="/movies" className="text-red-600 hover:text-red-700 font-medium">View All</Link>
+            </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {movies.slice(4, 8).map((movie) => (
               <MovieCard key={movie._id} movie={movie} />
