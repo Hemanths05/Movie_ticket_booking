@@ -14,6 +14,22 @@ router.post("/", async (req, res) => {
   try {
     const lowerQuery = query.toLowerCase();
 
+    const allowedKeywords = [
+      "movie", "movies",
+      "ticket", "tickets",
+      "theater", "theaters",
+      "seat", "seats",
+      "booking", "bookings",
+      "payment", "showtime", "cancel", "refund", "offers", "discount"
+    ];
+    
+    const wordsInQuery = lowerQuery.split(/\s+/); // 🔥 split the input by space
+    
+    const isRelated = wordsInQuery.some(word => allowedKeywords.includes(word));
+    if (!isRelated) {
+      return res.json({ reply: "Sorry, I can only assist with CineTicket movie bookings and information. 🎬" });
+    }
+
     // Fetch movies and theaters from database
     const movies = await Movie.find();
     const theaters = await Theater.find();
@@ -60,7 +76,7 @@ router.post("/", async (req, res) => {
     }
 
     // 📍 3. Theaters showing a particular movie
-    if (lowerQuery.includes("available theatres") || lowerQuery.includes("where can i watch") || lowerQuery.includes("which theaters")) {
+    if (lowerQuery.includes(" ") || lowerQuery.includes("where can i watch") || lowerQuery.includes("which theaters")) {
       if (foundMovie) {
         const theatersShowingMovie = theaters.filter(theater =>
           theater.moviesShowing.map(m => m.toLowerCase()).includes(foundMovie)
