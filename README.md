@@ -7,9 +7,9 @@ This application allows users to browse movies, select showtimes, book seats, in
 
 ## 🌐 Live Demo
 
-You can try out the live version of CineTicket below:
+- You can try out the live version of CineTicket below:
 - **CineTicket**: (https://movie-ticket-booking-zeta-swart.vercel.app/)
-Feel free to explore the platform, browse movies, and make bookings!
+- Feel free to explore the platform, browse movies, and make bookings!
 
 ---
 ## 🚀 Features
