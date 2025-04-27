@@ -32,7 +32,6 @@ This application allows users to browse movies, select showtimes, book seats, in
 - **Styling**: Tailwind CSS
 - **Icons**: Lucide React
 - **Routing**: React Router
-- **HTTP Client**: Axios
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Payments**: Stripe Payment Gateway
