@@ -182,8 +182,8 @@ const Login = () => {
             <span className="text-gray-400">password</span>
           </p>
           <p>
-            Admin: <span className="text-gray-400">admin@example.com</span> / Password:{' '}
-            <span className="text-gray-400">password</span>
+            Admin: <span className="text-gray-400">admin@gmail.com</span> / Password:{' '}
+            <span className="text-gray-400">123456</span>
           </p>
         </div>
       </div>
