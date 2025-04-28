@@ -37,9 +37,9 @@ This application allows users to browse movies, select showtimes, book seats, in
 - Email: user@example.com
 - Password: password
 - Admin User:
-- Email: admin@gmail.com.com
+- Email: admin@gmail.com
 - Password: 123456
-- 
+  
 - **Payment Account**:
 - Card Number: 4242 4242 4242 4242
 - CVV: 123
@@ -126,8 +126,8 @@ This application allows users to browse movies, select showtimes, book seats, in
   - Email: `user@example.com`
   - Password: `password`
 - **Admin User**:
-  - Email: `admin@example.com`
-  - Password: `password`
+  - Email: `admin@gmail.com`
+  - Password: `123456`
 
 ---
 
