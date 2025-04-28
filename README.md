@@ -30,6 +30,24 @@ This application allows users to browse movies, select showtimes, book seats, in
 - Feel free to explore the platform, browse movies, and make bookings!
 
 ---
+
+## 👨‍💻 Demo Accounts
+- **Login Accounts**:
+- Regular User:
+- Email: user@example.com
+- Password: password
+- Admin User:
+- Email: admin@gmail.com.com
+- Password: 123456
+- 
+- **Payment Account**:
+- Card Number: 4242 4242 4242 4242
+- CVV: 123
+- Expriy: 05/25
+- Zip : 12345
+
+---
+
 ## 🚀 Features
 
 - **User Authentication**: Secure login and registration system
